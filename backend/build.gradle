@@ -17,8 +17,6 @@ apply plugin: 'io.spring.dependency-management'
 sourceCompatibility = 1.11
 targetCompatibility = 1.11
 
-println name
-println project.name
 repositories {
     mavenCentral()
 }
@@ -26,16 +24,17 @@ repositories {
 // https://stackoverflow.com/questions/26389679/running-spring-app-built-with-gradle-on-heroku?rq=1
 // https://stackoverflow.com/questions/33727502/gradle-leftshift-operator-with-task-needed-is-it-superfluous
 task stage(type: Copy, dependsOn: [clean, build]) {
-    from jar.archivePath
+    println "Executing stage copy jar"
+    from jar.getArchiveFile()
     into project.rootDir
     rename {
         'app.jar'
     }
 }
-stage.mustRunAfter(clean)
 
+stage.mustRunAfter(build)
 
-clean {
+build {
     doLast {
         project.file('app.jar').delete()
     }
