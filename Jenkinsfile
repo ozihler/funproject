@@ -10,7 +10,7 @@ pipeline {
     stage("Print"){
         steps {
                     sh "chmod +x gradlew"
-                    sh "./gradlew project.path"
+                    sh "./gradlew printDir()"
         }
     }
         stage('Clean Build') {
