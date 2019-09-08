@@ -1,0 +1,7 @@
+- Security & Authentication: Kerberos, NTLM, Spring-Security, Angular Security, Web Security
+- Search: Elastic
+- Logs: ELK/Filebeat/Kibana
+- Architecture: Clean/Ports&Adapters/DDD
+- Deployment: Ansible, Jenkins, Docker, JFrog, GIT
+- Server: Apache, Tomcat, Reverse Proxy, DNS, HTTP, TCP/IP
+- Database: Liquibase
