@@ -7,22 +7,10 @@ pipeline {
       }
 
     stages {
-        stage('Clean') {
+        stage('Clean Build') {
             steps {
                     sh "chmod +x gradlew"
-                    sh "./gradlew clean"
-            }
-        }
-        stage('Build') {
-            steps {
-                    sh "chmod +x gradlew"
-                    sh "./gradlew build"
-            }
-        }
-        stage('Test') {
-            steps {
-                    sh "chmod +x gradlew"
-                    sh "./gradlew check"
+                    sh "./gradlew clean build"
             }
         }
          stage('Deploy') {
