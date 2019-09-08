@@ -17,6 +17,5 @@ public class RetrievePostsTest {
         Posts posts = postsReader.getAllPosts();
 
         assertEquals(3, posts.count());
-
     }
 }
