@@ -16,7 +16,7 @@ pipeline {
         }
          stage('Deploy') {
                     steps {
-                         sh 'app.jar'
+                         sh 'java app.jar'
                     }
                 }
     }
