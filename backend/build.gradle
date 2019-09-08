@@ -17,6 +17,8 @@ apply plugin: 'io.spring.dependency-management'
 sourceCompatibility = 1.11
 targetCompatibility = 1.11
 
+println name
+println project.name
 repositories {
     mavenCentral()
 }
@@ -32,9 +34,6 @@ task stage(type: Copy, dependsOn: [clean, build]) {
 }
 stage.mustRunAfter(clean)
 
-task projectDir() {
-    println project.path
-}
 
 clean {
     doLast {
