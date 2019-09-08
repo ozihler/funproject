@@ -1,10 +1,15 @@
 package com.zihler.posts.retrieval;
 
-import java.util.Set;
-
 public class PostsReader implements IRetrievePosts {
+    private final PostRepository posts;
+
+    public PostsReader(PostRepository posts) {
+        this.posts = posts;
+    }
+
     @Override
     public Posts getAllPosts() {
-        return new Posts(Set.of(new Post(), new Post(), new Post()));
+        return posts.findAll();
     }
+
 }

@@ -7,6 +7,11 @@ pipeline {
       }
 
     stages {
+    stage("Print"){
+        steps {
+            sh "echo ${projectDir()}"
+        }
+    }
         stage('Clean Build') {
             steps {
                     sh "chmod +x gradlew"
