@@ -16,7 +16,7 @@ pipeline {
         }
          stage('Deploy') {
                     steps {
-                         sh 'java var/jenkins_home/workspace/funproject/backend/build/libs/backend-0.1.0-SNAPSHOT.jar'
+                         sh 'app.jar'
                     }
                 }
     }
